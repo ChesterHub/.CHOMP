@@ -4,68 +4,70 @@ var GameState = {
 	preload: function(){
 		this.load.image('background', 'assets/2d_background.jpg');
 		this.load.image('mushroom', 'assets/Mushroom.png');
+		this.load.image('hunter', 'assets/hunterhead.png');
 	},
 	create: function(){
 		this.physics.startSystem(Phaser.Physics.ARCADE);
-
 		this.background = this.game.add.sprite(0,0, 'background');
+
+		// Mushroom
 		this.mushroom = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'mushroom');
 		this.mushroom.anchor.setTo(0.5,0.5);
-		this.mushroom.scale.setTo(1.5,1.5);
+		this.physics.enable(this.mushroom);
+		this.mushroom.body.gravity.y = 800;
+		this.mushroom.body.collideWorldBounds = true;
+		// this.mushroom.body.gravity.x = 50;
+		this.mushroom.body.bounce.setTo(1,0);
 
-		this.physics.enable(mushroom);
-		// this.mushroom.body.gravity.y = 100;
-		// this.mushroom.body.collideWorldBounds = true;
+		// Hunter's Head
+		this.hunter = this.game.add.sprite(350,0, 'hunter');
+		this.hunter.scale.setTo(0.4,0.4);
+		this.physics.enable(this.hunter);
+		// Make Hunter Head Move
+		this.hunter.body.collideWorldBounds=true;
+		this.hunter.body.gravity.y = 300 + Math.random() * 100;
+		this.hunter.body.bounce.setTo(.95, 1);
+
+		// Score with global variables
+		score = 0
+		scoreText = this.add.text(16, 16, 'Score: 0', { fontSize: '24px', fill: '#000' });
+		gameover = false
+
+
 	},
 	update: function(){
+		// Update Score
+		score += 1
+		if (gameover === false) {scoreText.text = 'Score: ' + score;}
+		// Hunter Randomize Gravity
+		this.hunter.body.gravity.x = this.rnd.integerInRange(-5000, 5000);
+		// Destroy muaheoom
+		if (this.physics.arcade.collide(this.mushroom, this.hunter)) {
+			hunterEat(this.mushroom, this.hunter);
+		}
 		// MOVEMENT with keys
 		if (this.input.keyboard.isDown(Phaser.Keyboard.LEFT))
 		{
-			this.mushroom.x -= 3;
+			this.mushroom.body.velocity.x = -400;
 		}
 		else if (this.input.keyboard.isDown(Phaser.Keyboard.RIGHT))
 		{
-			this.mushroom.x += 3;
+			this.mushroom.body.velocity.x = 400;
 		}
-
-		if (this.input.keyboard.isDown(Phaser.Keyboard.UP))
+		if (this.input.keyboard.isDown(Phaser.Keyboard.UP) && (this.mushroom.body.onFloor() || this.mushroom.body.touching.down))
 		{
-			this.mushroom.y -= 3;
+			this.mushroom.body.velocity.y = -900;
 		}
-		else if (this.input.keyboard.isDown(Phaser.Keyboard.DOWN))
-		{
-			this.mushroom.y += 3;
+		// function when mushroom dies, stop the game
+		hunterEat = function(mushroom, hunter) {
+			mushroom.kill();
+			hunter.scale.setTo(1,1);
+			gameover = true;
 		}
-
-		// if (this.physics.arcade.distanceToPointer(mushroom, this.input.activePointer) > 5)
-		// {
-  //       //  Make the object seek to the active pointer (mouse or touch).
-        // this.physics.arcade.moveToPointer(mushroom, 300);
-  //   	};
-}
-
-// 	render: function(){
-// 		this.debug.inputInfo(32, 32);
-// 	}
+	},
 };
+
+
 
 game.state.add('GameState', GameState);
 game.state.start('GameState');
-
-
-// OLD HTML CODE
-	// <script type="text/javascript">
-	// 	var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
-
-	// 	function preload() {
-	// 		game.load.image('background', 'assets/2d_background.jpg');
-	// 	}
-
-	// 	function create() {
-	// 		game.background = game.game.add.sprite(0,0, 'background');
-	// 	}
-
-	// 	function update() {
-	// 	}
-
-	// </script>
