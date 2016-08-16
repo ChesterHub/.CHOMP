@@ -2,9 +2,9 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO);
 
 var GameState = {
 	preload: function(){
-		this.load.image('background', 'assets/2d_background.jpg');
-		this.load.image('mushroom', 'assets/Mushroom.png');
-		this.load.image('hunter', 'assets/hunterhead.png');
+		this.load.image('background', '/assets/2d_background.jpg');
+		this.load.image('mushroom', '/assets/Mushroom.png');
+		this.load.image('hunter', '/assets/hunterhead.png');
 	},
 	create: function(){
 		this.physics.startSystem(Phaser.Physics.ARCADE);
@@ -14,7 +14,7 @@ var GameState = {
 		this.mushroom = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'mushroom');
 		this.mushroom.anchor.setTo(0.5,0.5);
 		this.physics.enable(this.mushroom);
-		this.mushroom.body.gravity.y = 800;
+		this.mushroom.body.gravity.y = 900;
 		this.mushroom.body.collideWorldBounds = true;
 		// this.mushroom.body.gravity.x = 50;
 		this.mushroom.body.bounce.setTo(1,0);
@@ -37,8 +37,9 @@ var GameState = {
 	},
 	update: function(){
 		// Update Score
-		score += 1
-		if (gameover === false) {scoreText.text = 'Score: ' + score;}
+		if (gameover === false) {
+			score += 1;
+			scoreText.text = 'Score: ' + score;}
 		// Hunter Randomize Gravity
 		this.hunter.body.gravity.x = this.rnd.integerInRange(-5000, 5000);
 		// Destroy muaheoom
