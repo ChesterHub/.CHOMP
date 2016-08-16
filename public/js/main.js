@@ -2,9 +2,9 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO);
 
 var GameState = {
 	preload: function(){
-		this.load.image('background', '/../assets/2d_background.jpg');
-		this.load.image('mushroom', '/../assets/Mushroom.png');
-		this.load.image('hunter', '/../assets/hunterhead.png');
+		this.load.image('background', '/assets/2d_background.jpg');
+		this.load.image('mushroom', '/assets/Mushroom.png');
+		this.load.image('hunter', '/assets/hunterhead.png');
 	},
 	create: function(){
 		this.physics.startSystem(Phaser.Physics.ARCADE);
