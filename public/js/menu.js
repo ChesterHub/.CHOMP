@@ -1,9 +1,9 @@
 var menuState = {
 	create: function() {
-		var nameLabel = game.add.text(80, 80, 'DBC HUNGRY', {font: '50px Arial', fill: '#ffffff'});
-		var startLanel = game.add.text(80, 'press "W" key to start', {font: '20px Arial', fill: '#ffffff'});
+		var nameLabel = game.add.text(1, 10, 'DBC - HUNGRY INSTRUCTORS', {font: '47px Arial', fill: '#ffffff'});
+		var startLabel = game.add.text(80, 300, 'press "SPACEBAR" key to start', {font: '20px Arial', fill: '#ffffff'});
 
-		var wkey = game.input.keyboard.addKey(Phaser.keyboard.W);
+		var wkey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
 		wkey.onDown.addOnce(this.start, this);
 	},

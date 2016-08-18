@@ -1,11 +1,6 @@
 var playState = {
 	create: function() {
-		this.physics.startSystem(Phaser.Physics.ARCADE);
 		this.background = this.game.add.sprite(0,0, 'background');
-
-		// win sprite
-		this.win = game.add.sprite(256, 256, 'GAME OVER');
-		game.physics.enable(this.win, Phaser.Physics.ARCADE);
 
 		// Mushroom
 		this.mushroom = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'mushroom');
@@ -39,7 +34,7 @@ var playState = {
 			scoreText.text = 'Score: ' + score;}
 		// Hunter Randomize Gravity
 		this.hunter.body.gravity.x = this.rnd.integerInRange(-5000, 5000);
-		// Destroy muaheoom
+		// Destroy mushroom
 		if (this.physics.arcade.collide(this.mushroom, this.hunter)) {
 			hunterEat(this.mushroom, this.hunter);
 		}
@@ -61,11 +56,13 @@ var playState = {
 			mushroom.kill();
 			hunter.scale.setTo(1,1);
 			gameover = true;
+			// Win function doesn't work. So i start gameover here
+			game.state.start( 'win');
 		}
 	},
 
-	Win: function() {
-		game.state.start('win';)
-	}
+	// Win: function() {
+	// 	game.state.start('win');
+	// }
 
 }

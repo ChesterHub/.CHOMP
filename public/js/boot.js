@@ -2,7 +2,7 @@ var bootState = {
 
 	create: function () {
 		game.physics.startSystem(Phaser.Physics.ARCADE);
-		game.state.start
+		game.state.start('load');
 
 	}
 }
