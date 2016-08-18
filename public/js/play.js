@@ -62,7 +62,7 @@ var playState = {
 	},
 
 	// Win: function() {
-	// 	game.state.start('win');
+	// 	game.state.start('win'); 
 	// }
 
 }
