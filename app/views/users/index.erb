@@ -1,5 +1,6 @@
-<h1>Users/index</h1>
+<h1 class="header">devbootcamp.CHOMP</h1>
 
+<div id="login">
 <% if current_user %>
   <a href="/users/profile">Click here to go to Profile Page</a>
   <form action="/sessions" method="POST">
@@ -14,4 +15,4 @@
     <input type="submit" value="Login">
   </form>
 <% end %>
-
+</div>

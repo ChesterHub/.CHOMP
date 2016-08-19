@@ -1,3 +1,49 @@
-.registration {
-  margin-top: 5%;
+body {
+	background-color: #252627;
+	color: #FFF9FB;
+	font-family: "Verdana";
 }
+
+.header {
+   border:1px solid #BB0A21;
+   background-color: #BB0A21;
+   font-family: "Tahoma";
+   text-align: center;
+}
+
+.button {
+    border: none;
+    color: white;
+    padding-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: auto;
+    cursor: pointer;
+}
+
+
+.registration {
+	text-align: center;
+}
+
+#gameDiv {
+	margin: auto;
+	padding: 2%;
+}
+
+#scores {
+	display: inline-block;
+	color: #4B88A2;
+}
+
+a {
+	color: #4B88A2;
+}
+
+#login {
+	text-align: center;
+}
+
+
