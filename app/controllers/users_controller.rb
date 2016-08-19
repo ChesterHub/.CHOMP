@@ -12,6 +12,7 @@ end
 # Users SHOW
 get '/users/profile' do
   @user = current_user
+  @top_scores = Score.all.order(score: :desc).limit(15)
   erb :'users/show'
 end
 
@@ -55,10 +56,20 @@ end
 # Collect SCORES
 post '/add_score_to_user' do
   @user = current_user if current_user
+  @top_scores = Score.all.order(score: :desc).limit(15)
   @user.scores.create(score: params[:score].to_i)
   if request.xhr?
     current_user.to_json
   else
   end
 end
+
+# get '/get_score' do
+# @user = current_user if current_user
+# p current_user.scores.last.score
+# if request.xhr?
+#   current_user.scores.last.score.to_json
+# else
+# end
+# end
 

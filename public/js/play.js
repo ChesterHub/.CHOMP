@@ -1,6 +1,6 @@
 var playState = {
 	create: function() {
-		this.background = this.game.add.sprite(0,0, 'background');
+		this.background = this.game.add.sprite(0,0, 'background2');
 
 		// Mushroom
 		this.mushroom = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'mushroom');
@@ -8,7 +8,6 @@ var playState = {
 		this.physics.enable(this.mushroom);
 		this.mushroom.body.gravity.y = 900;
 		this.mushroom.body.collideWorldBounds = true;
-		// this.mushroom.body.gravity.x = 50;
 		this.mushroom.body.bounce.setTo(1,0);
 
 		// Hunter's Head
@@ -39,15 +38,15 @@ var playState = {
 			hunterEat(this.mushroom, this.hunter);
 		}
 		// MOVEMENT with keys
-		if (this.input.keyboard.isDown(Phaser.Keyboard.LEFT))
+		if (this.input.keyboard.isDown(Phaser.Keyboard.A))
 		{
 			this.mushroom.body.velocity.x = -400;
 		}
-		else if (this.input.keyboard.isDown(Phaser.Keyboard.RIGHT))
+		else if (this.input.keyboard.isDown(Phaser.Keyboard.D))
 		{
 			this.mushroom.body.velocity.x = 400;
 		}
-		if (this.input.keyboard.isDown(Phaser.Keyboard.UP) && (this.mushroom.body.onFloor() || this.mushroom.body.touching.down))
+		if (this.input.keyboard.isDown(Phaser.Keyboard.W) && (this.mushroom.body.onFloor() || this.mushroom.body.touching.down))
 		{
 			this.mushroom.body.velocity.y = -900;
 		}
@@ -64,8 +63,9 @@ var playState = {
 }
 
 function handleEndOfGame(){
-	console.log(score)
 	$.post('/add_score_to_user', {score: score})
-	.done(function(res){console.log(res)})
+	.done(function(res){
+		$("#scores").html();
+	})
 	.fail(function(){alert('You fucked up')})
 }
