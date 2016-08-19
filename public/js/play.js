@@ -6,7 +6,7 @@ var playState = {
 		this.mushroom = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'mushroom');
 		this.mushroom.anchor.setTo(0.5,0.5);
 		this.physics.enable(this.mushroom);
-		this.mushroom.body.gravity.y = 900;
+		this.mushroom.body.gravity.y = 1000;
 		this.mushroom.body.collideWorldBounds = true;
 		this.mushroom.body.bounce.setTo(1,0);
 
@@ -20,13 +20,15 @@ var playState = {
 		this.hunter.body.bounce.setTo(.95, 1);
 
 		// Seba's Head
-		this.seba = this.game.add.sprite(0,600, 'seba');
+		this.seba = this.game.add.sprite(350,-100, 'seba');
 		this.seba.scale.setTo(0.9,0.9);
 		this.physics.enable(this.seba);
 		// Make Seba Head Move
-		this.seba.body.collideWorldBounds=true;	
-		// this.seba.body.gravity.x = 500;
-		// this.seba.body.bounce.setTo(.95, 1);
+		this.seba.body.collideWorldBounds=true;
+		this.seba.body.gravity.y = 400;	
+		this.seba.body.bounce.setTo(.8, .65);
+		this.seba.body.enable = false;
+		this.seba.visible = false;
 
 		// Score with global variables
 		score = 0
@@ -40,14 +42,19 @@ var playState = {
 		if (gameover === false) {
 			score += 1;
 			scoreText.text = 'Score: ' + score;}
+		//Activate Seba at score 1000
+		if (score >= 1000) {
+			this.seba.body.enable = true;
+			this.seba.visible = true;
+		} 
 		// Hunter Randomize Gravity
-		this.hunter.body.gravity.x = this.rnd.integerInRange(-5000, 5000);
+		this.hunter.body.gravity.x = this.rnd.integerInRange(-4500, 4500);
 		// Seba Randomize Gravity
 		this.seba.body.gravity.x = this.rnd.integerInRange(-2000, 2000);
 		// Hunter and Seba Head Collision
 		if (this.physics.arcade.collide(this.hunter, this.seba)) {
-			this.hunter.body.velocity.y = 800;
-			this.seba.body.velocity.x = 800;
+			this.hunter.body.velocity.y = 700;
+			this.seba.body.velocity.x = this.rnd.integerInRange(-900,900);
 		}
 		// Destroy mushroom
 		if ((this.physics.arcade.collide(this.mushroom, this.hunter)) || (this.physics.arcade.collide(this.mushroom, this.seba))) {
@@ -57,16 +64,17 @@ var playState = {
 		this.mushroom.body.velocity.x = 0;
 		if (this.input.keyboard.isDown(Phaser.Keyboard.A))
 		{
-			this.mushroom.body.velocity.x = -400;
+			this.mushroom.body.velocity.x = -450;
 		}
 		else if (this.input.keyboard.isDown(Phaser.Keyboard.D))
 		{
-			this.mushroom.body.velocity.x = 400;
+			this.mushroom.body.velocity.x = 450;
 		}
 		if (this.input.keyboard.isDown(Phaser.Keyboard.W) && (this.mushroom.body.onFloor() || this.mushroom.body.touching.down))
 		{
-			this.mushroom.body.velocity.y = -900;
+			this.mushroom.body.velocity.y = -1000;
 		}
+
 		// function when mushroom dies, stop the game
 		eatMushroom = function(mushroom, head) {
 			mushroom.kill();
