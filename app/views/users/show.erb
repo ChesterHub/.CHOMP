@@ -16,14 +16,16 @@
   </form>
 </div>
 
-<div id="gameDiv"></div>
+<div id="parent">
+  <div id="gameDiv"></div>
 
-<div id="scores"> 
-  <h3>Top 15</h3>
-  <p>
-    <% @top_scores.each do |score| %>
-    Username: <%= score.user.username %><br>
-    Score: <%= score.score %><br>
-    <% end %>
-  </p>
+  <div id="scores"> 
+    <h3>Top 15</h3>
+    <p>
+      <% @top_scores.each do |score| %>
+      Username: <%= score.user.username %><br>
+      Score: <%= score.score %><br>
+      <% end %>
+    </p>
+  </div>
 </div>

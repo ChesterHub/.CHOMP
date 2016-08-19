@@ -34,7 +34,8 @@ body {
 }
 
 #scores {
-	display: inline-block;
+	/*display: inline-block;*/
+	flex: 1;
 	color: #4B88A2;
 }
 
@@ -44,6 +45,10 @@ a {
 
 #login {
 	text-align: center;
+}
+
+#parent {
+	display: flex;
 }
 
 
