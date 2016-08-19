@@ -19,6 +19,15 @@ var playState = {
 		this.hunter.body.gravity.y = 300 + Math.random() * 100;
 		this.hunter.body.bounce.setTo(.95, 1);
 
+		// Seba's Head
+		this.seba = this.game.add.sprite(0,600, 'seba');
+		this.seba.scale.setTo(0.9,0.9);
+		this.physics.enable(this.seba);
+		// Make Seba Head Move
+		this.seba.body.collideWorldBounds=true;	
+		// this.seba.body.gravity.x = 500;
+		// this.seba.body.bounce.setTo(.95, 1);
+
 		// Score with global variables
 		score = 0
 		scoreText = this.add.text(16, 16, 'Score: 0', { fontSize: '24px', fill: '#000' });
@@ -33,11 +42,19 @@ var playState = {
 			scoreText.text = 'Score: ' + score;}
 		// Hunter Randomize Gravity
 		this.hunter.body.gravity.x = this.rnd.integerInRange(-5000, 5000);
+		// Seba Randomize Gravity
+		this.seba.body.gravity.x = this.rnd.integerInRange(-2000, 2000);
+		// Hunter and Seba Head Collision
+		if (this.physics.arcade.collide(this.hunter, this.seba)) {
+			this.hunter.body.velocity.y = 800;
+			this.seba.body.velocity.x = 800;
+		}
 		// Destroy mushroom
-		if (this.physics.arcade.collide(this.mushroom, this.hunter)) {
-			hunterEat(this.mushroom, this.hunter);
+		if ((this.physics.arcade.collide(this.mushroom, this.hunter)) || (this.physics.arcade.collide(this.mushroom, this.seba))) {
+			eatMushroom(this.mushroom, this.hunter);
 		}
 		// MOVEMENT with keys
+		this.mushroom.body.velocity.x = 0;
 		if (this.input.keyboard.isDown(Phaser.Keyboard.A))
 		{
 			this.mushroom.body.velocity.x = -400;
@@ -51,9 +68,9 @@ var playState = {
 			this.mushroom.body.velocity.y = -900;
 		}
 		// function when mushroom dies, stop the game
-		hunterEat = function(mushroom, hunter) {
+		eatMushroom = function(mushroom, head) {
 			mushroom.kill();
-			hunter.scale.setTo(1,1);
+			// hunter.scale.setTo(1,1);
 			gameover = true;
 			// Win function doesn't work. So i start gameover here
 			game.state.start( 'win');
