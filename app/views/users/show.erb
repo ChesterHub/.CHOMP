@@ -1,3 +1,13 @@
+<head>
+<script type="text/javascript" src="/js/lib/phaser.min.js"></script>
+  <script type="text/javascript" src="../js/boot.js"></script>
+  <script type="text/javascript" src="../js/load.js"></script>
+  <script type="text/javascript" src="../js/menu.js"></script>
+  <script type="text/javascript" src="../js/play.js"></script>
+  <script type="text/javascript" src="../js/win.js"></script>
+  <script type="text/javascript" src="../js/game.js"></script>
+ </head>
+
 
 <h1>Hello <%= current_user.username.capitalize %>, lets play!</h1>
 
@@ -7,5 +17,13 @@
     <input type="submit" value="Logout">
   </form>
 
-
-<div id="gamescreen">  <script src="/js/main.js"></script></div>
+<div id="gameDiv"></div>
+<div id="scores"> 
+<h3>Top 15</h3>
+  <p>
+  <% @top_scores.each do |score| %>
+  Username: <%= score.user.username %><br>
+  Score: <%= score.score %><br>
+  <% end %>
+  </p>
+  </div>
