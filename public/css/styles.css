@@ -36,7 +36,8 @@ body {
 #scores {
 	/*display: inline-block;*/
 	flex: 1;
-	color: #4B88A2;
+	font-size: 130%;
+	color: #4B88A2
 }
 
 a {
@@ -48,6 +49,7 @@ a {
 }
 
 #parent {
+	padding-left: 3%;
 	display: flex;
 }
 
