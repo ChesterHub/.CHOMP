@@ -52,3 +52,13 @@ delete '/users/:id' do
   redirect "/users"
 end
 
+# Collect SCORES
+post '/add_score_to_user' do
+  @user = current_user if current_user
+  @user.scores.create(score: params[:score].to_i)
+  if request.xhr?
+    current_user.to_json
+  else
+  end
+end
+

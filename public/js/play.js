@@ -58,11 +58,14 @@ var playState = {
 			gameover = true;
 			// Win function doesn't work. So i start gameover here
 			game.state.start( 'win');
+			handleEndOfGame();
 		}
-	},
+	}
+}
 
-	// Win: function() {
-	// 	game.state.start('win'); 
-	// }
-
+function handleEndOfGame(){
+	console.log(score)
+	$.post('/add_score_to_user', {score: score})
+	.done(function(res){console.log(res)})
+	.fail(function(){alert('You fucked up')})
 }
