@@ -81,7 +81,7 @@ var playState = {
 			// hunter.scale.setTo(1,1);
 			gameover = true;
 			// Win function doesn't work. So i start gameover here
-			game.state.start( 'win');
+			game.state.start('win');
 			handleEndOfGame();
 		}
 	}
