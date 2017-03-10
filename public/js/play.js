@@ -31,7 +31,7 @@ var playState = {
 		this.seba.visible = false;
 
 		// Score with global variables
-		score = 0
+		score = 3000
 		scoreText = this.add.text(16, 16, 'Score: 0', { fontSize: '24px', fill: '#000' });
 		gameover = false
 

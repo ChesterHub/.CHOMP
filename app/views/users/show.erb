@@ -9,7 +9,7 @@
 </head>
 
 <div class="header">
-  <h1>Hello <%= current_user.username.capitalize %>, lets play!</h1>
+  <h1>Hello <%= current_user.username %>, lets play!</h1>
   <form action="/sessions" method="POST" class="button">
     <input type="hidden" name="_method" value="DELETE">
     <input type="submit" value="Logout">

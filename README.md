@@ -1,1 +1,1 @@
-# PassionProject
+dotChomp is an endless runner mini-game built for Web browsers. Utilizing Phaser and vanilla Javascript, this application tracks all scores where the top 15 will be projected on the main page.
