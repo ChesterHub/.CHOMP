@@ -40,7 +40,7 @@ var playState = {
 	update: function() {
 		// Update Score
 		if (gameover === false) {
-			score += 100;
+			score += 1;
 			scoreText.text = 'Score: ' + score;}
 		//Activate Seba at score 1000
 		if (score >= 1000) {
