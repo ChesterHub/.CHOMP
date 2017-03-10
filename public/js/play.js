@@ -31,7 +31,7 @@ var playState = {
 		this.seba.visible = false;
 
 		// Score with global variables
-		score = 3000
+		score = 0
 		scoreText = this.add.text(16, 16, 'Score: 0', { fontSize: '24px', fill: '#000' });
 		gameover = false
 
@@ -40,7 +40,7 @@ var playState = {
 	update: function() {
 		// Update Score
 		if (gameover === false) {
-			score += 1;
+			score += 100;
 			scoreText.text = 'Score: ' + score;}
 		//Activate Seba at score 1000
 		if (score >= 1000) {
@@ -92,5 +92,5 @@ function handleEndOfGame(){
 	.done(function(res){
 		$("#scores").html();
 	})
-	.fail(function(){alert('You fucked up')})
+	.fail(function(){alert('Score did not save')})
 }
