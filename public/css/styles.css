@@ -38,9 +38,10 @@ body {
 
 #scores {
 	padding-top: 5px;
-	padding-left: 10px;
+	padding-right: 10px;
 	position: absolute;
-	font-size: 90%;
+	margin: right;
+	font-size: 120%;
 	color: #4B88A2
 }
 
@@ -85,5 +86,5 @@ ol li {
 	color: white;
 }
 
-nav ol{height:700px; width:100%;}
+nav ol{height:80px; width:120%;}
 nav ol{overflow:hidden; overflow-y:scroll;}
