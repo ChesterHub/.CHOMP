@@ -38,13 +38,18 @@ body {
 #scores {
 	padding-top: 20px;
 	position: absolute;
-	flex: 1;
 	font-size: 100%;
 	color: #4B88A2
 }
 
 #scores span {
 	font-weight: bold;
+	color: red;
+}
+
+.score {
+	font-weight: normal;
+	padding-left: 5px;
 	color: red;
 }
 

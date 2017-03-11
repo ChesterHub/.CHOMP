@@ -25,7 +25,7 @@
   <ul>
     <% @top_scores.each do |score| %>
     <li><span>Username:</span> <%= score.user.username %>
-    <span>Score:</span> <%= score.score %></li>
+    <br>  <span class="score">Score:</span> <%= score.score %></li>
     <% end %>
   </ul>
 </div>
