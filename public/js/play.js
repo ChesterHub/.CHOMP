@@ -6,7 +6,7 @@ var playState = {
 		this.mushroom = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'mushroom');
 		this.mushroom.anchor.setTo(0.5,0.5);
 		this.physics.enable(this.mushroom);
-		this.mushroom.body.gravity.y = 1000;
+		this.mushroom.body.gravity.y = 1500;
 		this.mushroom.body.collideWorldBounds = true;
 		this.mushroom.body.bounce.setTo(1,0);
 
