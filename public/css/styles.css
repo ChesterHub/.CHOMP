@@ -40,7 +40,7 @@ body {
 	padding-top: 5px;
 	padding-left: 10px;
 	position: absolute;
-	font-size: 100%;
+	font-size: 90%;
 	color: #4B88A2
 }
 
@@ -51,7 +51,7 @@ body {
 
 .score {
 	font-weight: normal;
-	padding-left: 5px;
+	padding-left: 10px;
 	color: #ad0000;
 }
 
@@ -61,7 +61,6 @@ a {
 
 ol li {
 	list-style-type: upper-roman;
-	text-align: center;
 	padding-bottom: 5px;
 }
 
