@@ -24,7 +24,7 @@
     <nav>
       <ol>
         <% @top_scores.each do |score| %>
-        <li><span>Username:</span> <%= score.user.username %>
+        <li><span class="score">Username:</span> <%= score.user.username %>
           <br>  <span class="score">Score:</span> <%= score.score %></li>
           <% end %>
         </ol>

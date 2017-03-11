@@ -41,17 +41,14 @@ body {
 	padding-left: 15px;
 	position: absolute;
 	font-size: 110%;
-	color: #4B88A2
+	color: #4B88A2;
 }
 
-#scores span {
-	color: #ad0000;
-}
 
 .score {
 	font-weight: normal;
 	padding-left: 10px;
-	color: white;
+	color: #ad0000;
 }
 
 a {
@@ -61,6 +58,7 @@ a {
 ol li {
 	list-style-type: default;
 	padding-bottom: 5px;
+	color: white;
 }
 
 .notification {
