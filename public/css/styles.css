@@ -45,13 +45,13 @@ body {
 
 #scores span {
 	font-weight: bold;
-	color: red;
+	color: #5e0000;
 }
 
 .score {
 	font-weight: normal;
 	padding-left: 5px;
-	color: red;
+	color: #5e0000;
 }
 
 #scores p {
@@ -60,6 +60,10 @@ body {
 
 a {
 	color: #4B88A2;
+}
+
+ol li {
+	list-style-type: upper-roman;
 }
 
 .notification {

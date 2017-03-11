@@ -20,12 +20,12 @@
   <div id="gameDiv"></div>
 
   <div id="scores"> 
-    <h3 id="top">Top 30</h3>
-    <ul>
+    <h4 id="top">Top 30</h4>
+    <ol>
       <% @top_scores.each do |score| %>
       <li><span>Username:</span> <%= score.user.username %>
         <br>  <span class="score">Score:</span> <%= score.score %></li>
         <% end %>
-      </ul>
+      </ol>
     </div>
 </div>
