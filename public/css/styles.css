@@ -74,7 +74,7 @@ a {
 
 #parent {
 	margin: auto;
-/*	display: flex;*/
+	display: flex;
 }
 
 #top {
