@@ -45,7 +45,6 @@ body {
 }
 
 #scores span {
-	font-weight: bold;
 	color: #ad0000;
 }
 
@@ -85,5 +84,5 @@ ol li {
 	color: white;
 }
 
-nav ol{height:80px; width:120%;}
+nav ol{height:800px; width:123%;}
 nav ol{overflow:hidden; overflow-y:scroll;}
