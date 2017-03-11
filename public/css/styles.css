@@ -36,7 +36,8 @@ body {
 }
 
 #scores {
-	/*display: inline-block;*/
+	padding-top: 20px;
+	position: absolute;
 	flex: 1;
 	font-size: 100%;
 	color: #4B88A2
@@ -72,6 +73,6 @@ a {
 }
 
 #top {
-	font-size: 110%;
-	color: red;
+	font-size: 150%;
+	color: white;
 }
