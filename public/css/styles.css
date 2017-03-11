@@ -38,7 +38,7 @@ body {
 
 #scores {
 	padding-top: 5px;
-	padding-left: 10px;
+	padding-left: 15px;
 	position: absolute;
 	font-size: 110%;
 	color: #4B88A2
@@ -61,7 +61,6 @@ a {
 ol li {
 	list-style-type: upper-roman;
 	padding-bottom: 5px;
-	padding-left: 10px;
 }
 
 .notification {
@@ -86,5 +85,5 @@ ol li {
 	justify-content: center;
 }
 
-nav ol{height:700px; width:123%;}
+nav ol{height:675px; width:123%;}
 nav ol{overflow:hidden; overflow-y:scroll;}
