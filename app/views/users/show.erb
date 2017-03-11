@@ -23,8 +23,8 @@
   <h3 id="top">Top 30</h3>
     <p>
       <% @top_scores.each do |score| %>
-      Username: <%= score.user.username %><br>
-      Score: <%= score.score %><br>
+      <span>Username:</span> <%= score.user.username %><br>
+      <span>Score:</span> <%= score.score %><br>
       <% end %>
     </p>
   </div>

@@ -42,6 +42,15 @@ body {
 	color: #4B88A2
 }
 
+#scores span {
+	font-weight: bold;
+	color: red;
+}
+
+#scores p {
+	overflow-y: scroll;
+}
+
 a {
 	color: #4B88A2;
 }
@@ -63,6 +72,6 @@ a {
 }
 
 #top {
-	text-decoration: underline;
+	font-size: 110%;
 	color: red;
 }
