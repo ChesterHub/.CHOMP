@@ -59,7 +59,7 @@ a {
 }
 
 ol li {
-	list-style-type: upper-roman;
+	list-style-type: default;
 	padding-bottom: 5px;
 }
 
