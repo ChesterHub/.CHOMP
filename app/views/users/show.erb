@@ -21,11 +21,13 @@
 
   <div id="scores"> 
     <h4 id="top">Top 30</h4>
-    <ol>
-      <% @top_scores.each do |score| %>
-      <li><span>Username:</span> <%= score.user.username %>
-        <br>  <span class="score">Score:</span> <%= score.score %></li>
-        <% end %>
-      </ol>
+    <nav>
+      <ol>
+        <% @top_scores.each do |score| %>
+        <li><span>Username:</span> <%= score.user.username %>
+          <br>  <span class="score">Score:</span> <%= score.score %></li>
+          <% end %>
+        </ol>
+      </nav>
     </div>
-</div>
+  </div>
