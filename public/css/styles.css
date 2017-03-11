@@ -32,7 +32,7 @@ body {
 #gameDiv {
 	margin: auto;
 /*	justify-content: center;*/
-	padding: 10px;
+/*	padding: 10px;*/
 }
 
 #scores {
@@ -72,10 +72,10 @@ a {
 	text-align: center;
 }
 
-/*#parent {
+#parent {
 	margin: auto;
-	display: flex;
-}*/
+/*	display: flex;*/
+}
 
 #top {
 	font-size: 150%;
