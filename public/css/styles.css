@@ -38,10 +38,9 @@ body {
 
 #scores {
 	padding-top: 5px;
-	padding-right: 10px;
+	padding-left: 10px;
 	position: absolute;
-	margin: right;
-	font-size: 120%;
+	font-size: 110%;
 	color: #4B88A2
 }
 
