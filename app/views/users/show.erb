@@ -18,14 +18,14 @@
 
 <div id="parent">
   <div id="gameDiv"></div>
-</div>
 
-<div id="scores"> 
-  <h3 id="top">Top 30</h3>
-  <ul>
-    <% @top_scores.each do |score| %>
-    <li><span>Username:</span> <%= score.user.username %>
-    <br>  <span class="score">Score:</span> <%= score.score %></li>
-    <% end %>
-  </ul>
+  <div id="scores"> 
+    <h3 id="top">Top 30</h3>
+    <ul>
+      <% @top_scores.each do |score| %>
+      <li><span>Username:</span> <%= score.user.username %>
+        <br>  <span class="score">Score:</span> <%= score.score %></li>
+        <% end %>
+      </ul>
+    </div>
 </div>
