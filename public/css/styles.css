@@ -26,22 +26,31 @@ body {
 
 .registration {
 	text-align: center;
+	justify-content: center;
 }
 
 #gameDiv {
 	margin: auto;
-	padding: 2%;
+/*	justify-content: center;*/
+	padding: 10px;
 }
 
 #scores {
 	/*display: inline-block;*/
 	flex: 1;
-	font-size: 130%;
+	font-size: 100%;
 	color: #4B88A2
 }
 
 a {
 	color: #4B88A2;
+}
+
+.notification {
+	margin: auto;
+	justify-content: center;
+	text-align: center;
+	font-style: italic;
 }
 
 #login {
