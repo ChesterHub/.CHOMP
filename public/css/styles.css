@@ -58,10 +58,11 @@ a {
 }
 
 #parent {
-	padding-left: 3%;
+	margin: auto;
 	display: flex;
 }
 
 #top {
 	text-decoration: underline;
+	color: red;
 }

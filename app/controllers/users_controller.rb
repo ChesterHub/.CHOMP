@@ -12,7 +12,7 @@ end
 # Users SHOW
 get '/users/profile' do
   @user = current_user
-  @top_scores = Score.all.order(score: :desc).limit(15)
+  @top_scores = Score.all.order(score: :desc).limit(30)
   erb :'users/show'
 end
 
